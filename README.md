@@ -97,6 +97,31 @@ npm run start    # 프로덕션 서버 실행
 npm run lint     # ESLint 검사
 ```
 
+## 🎯 커스텀 커맨드
+
+### 컴포넌트 생성 제너레이터
+
+React 컴포넌트를 자동으로 생성합니다. TypeScript 타입, Tailwind 스타일이 포함됩니다.
+
+```bash
+npm run generate:component <ComponentName> [category]
+```
+
+**예시:**
+
+```bash
+# gallery 카테고리에 GalleryCard 컴포넌트 생성
+npm run generate:component GalleryCard gallery
+
+# 기본 카테고리(ui)에 Button 컴포넌트 생성
+npm run generate:component Button
+```
+
+생성되는 파일:
+- `src/components/<category>/<ComponentName>.tsx`
+
+또는 Claude Code의 `/generate-component` 커맨드를 사용할 수 있습니다.
+
 ## 📖 더 알아보기
 
 - [Next.js 문서](https://nextjs.org/docs) - Next.js 기능 및 API

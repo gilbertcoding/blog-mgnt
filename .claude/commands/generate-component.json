@@ -1,0 +1,12 @@
+{
+  "name": "generate-component",
+  "description": "React 컴포넌트, TypeScript 타입, Tailwind 스타일을 자동으로 생성합니다",
+  "trigger": "/generate-component",
+  "action": {
+    "type": "agent",
+    "agent": {
+      "type": "general-purpose",
+      "prompt": "사용자가 요청한 React 컴포넌트를 생성하는 도움을 드립니다.\n\n## 작업:\n1. 컴포넌트 이름을 받아서 src/components/<category>/<ComponentName>.tsx 파일 생성\n2. 적절한 카테고리 폴더 생성 (gallery, blog, layout, ui 등)\n3. TypeScript 타입 정의 포함\n4. Tailwind CSS로 스타일 작성\n5. 필요시 'use client' 지시어 추가\n6. shadcn/ui 컴포넌트 활용 시 import 추가\n\n## 컴포넌트 템플릿:\n```typescript\nimport { ReactNode } from 'react';\n\ninterface <ComponentName>Props {\n  // props 정의\n}\n\nexport const <ComponentName> = ({\n  // 구조분해할당\n}: <ComponentName>Props): ReactNode => {\n  return (\n    <div className=\"\">\n      {/* 컴포넌트 내용 */}\n    </div>\n  );\n};\n```\n\n## 규칙:\n- 파일명은 PascalCase (예: GalleryCard.tsx)\n- 폴더는 kebab-case로 자동 결정 (예: gallery)\n- index.ts 또는 index.tsx 파일은 생성하지 않음\n- any 타입 사용 금지\n- 한글 주석 사용 가능\n\n사용자의 요청을 받으면 위 규칙에 따라 필요한 컴포넌트 파일들을 생성해주세요."
+    }
+  }
+}
